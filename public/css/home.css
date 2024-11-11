@@ -1,0 +1,19 @@
+h1, h2 {
+    color: darkblue;
+}
+
+h1 {
+    text-align: center;
+}
+
+td, th {
+    border: 1px solid lightgray;
+}
+
+*[type="submit"] {
+    color: darkgreen;
+    background-color: grey;
+    /* border-color: grey; */
+    border-style: none;
+    border-radius: 5px;
+}

@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>Panier</title>
+        <link rel="stylesheet" href="/css/home.css" />
+    </head>
+    <body>
+        <h1>IT Academy</h1>
+        <h2>Panier</h2>
+        <form action="/" method="get">
+            <input type="submit" value="Finaliser l'inscription" formaction="/academy/basket/send" />
+            <input type="submit" value="Retourner au catalogue de formation" formaction="/academy" />
+        </form>
+        <form action="/" method="get">
+            <table>
+                <tr>
+                    <% for (let col of columns) { %>
+                        <th><%= col %></th>
+                    <% } %>
+                </tr>
+                <% for (let i = 0; i < courses.length; i++) { %>
+                    <tr>
+                        <% for (let col of columns) { %>
+                            <td><%= courses[i][col] %></td>
+                        <% } %>
+                        <td><button type="submit" value="Supprimer" formaction="/academy/basket/delete/<%= i %>">Supprimer</button></td>
+                    </tr>
+                <% } %> 
+            </table>
+        </form>
+    </body>
+</html>

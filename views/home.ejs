@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>IT Academy</title>
+        <link rel="stylesheet" href="/css/home.css" />
+    </head>
+    <body>
+        <h1>IT Academy</h1>
+        
+        <h2>Formations disponibles</h2>
+        <form action="/" method="get">
+            <button type="submit" value="Voir le panier" formaction="/academy/basket" ><strong>Voir le panier</strong></button>
+            <button type="submit" value="Se connecter" formaction="/academy/login" ><strong>Se connecter</strong></button>
+            <!-- <input type="hidden" name="send" value="false"> -->
+        </form>
+        <form action="/academy/add" method="post">
+            <table>
+                <tr>
+                    <% for (let col of columns) { %>
+                        <th><%= col %></th>
+                    <% } %>
+                </tr>
+                <% for (let i = 0; i < courses.length; i++) { %>
+                    <tr>
+                        <% for (let col of columns) { %>
+                            <td><%= courses[i][col] %></td>
+                        <% } %>
+                        <td><button type="submit" name="submit" value="<%= courses[i].Id %>" formaction="/academy/add/<%= i %>" >S'inscrire</button></td>
+                    </tr>
+                <% } %> 
+            </table>
+        </form>
+        <div>
+        <% if (send) { %>
+            <p>Inscription effectuée !</p>
+        <% } %>
+        </div>
+    </body>
+</html>
