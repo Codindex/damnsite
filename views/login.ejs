@@ -9,6 +9,11 @@
         <h3>Commencez par vous connecter</h3>
         <% } %>
         <h2>Entrez votre pseudo</h2>
+        <form action="/academy/login/save" method="post">
+            <input type="text" name="user" />
+            <input type="submit" value="Enregistrer" />
+            <input type="hidden" name="send" value="<%= send %>">
+        </form>
         <form id="loginForm">
             <input type="text" id="userInput" name="user" required />
             <input type="button" value="Enregistrer" onclick="displayUsername()" />
