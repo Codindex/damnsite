@@ -1,4 +1,5 @@
 let express = require('express');
+let cookieParser = require('cookie-parser');
 
 // Database
 let connection = require('./db');
@@ -6,6 +7,9 @@ let connection = require('./db');
 let app = express();
 
 app.use(express.urlencoded({extended: true}));
+
+// Cookies
+app.use(cookieParser());
 
 // session
 let session = require("express-session");
