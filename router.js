@@ -3,7 +3,7 @@ let express = require('express');
 let router = express.Router();
 
 let catalogController = require('./controllers/catalogController');
-// let loginController = require('./controllers/loginController');
+let loginController = require('./controllers/loginController');
 // let basketController = require('./controllers/basketController');
 
 // Redirect to homepage
@@ -15,7 +15,7 @@ router.post('/academy/add/:i', catalogController.addToBasket);
 
 // Login
 router.get('/academy/login', catalogController.login);
-router.post('/academy/login/save', catalogController.loginSend);
+router.post('/academy/login/save', loginController.login);
 
 // Submission
 router.get('/academy/basket', catalogController.basket);
